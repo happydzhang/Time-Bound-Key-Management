@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+    <data-sources>
+    <data-source key="datasource" type="org.apache.commons.dbcp.BasicDataSource">
+      <set-property property="password" value="123456" />
+      <set-property property="minCount" value="1" />
+      <set-property property="maxCount" value="100" />
+      <set-property property="username" value="root" />
+      <set-property property="driverClassName" value="com.mysql.jdbc.Driver" />
+      <set-property property="description" value="test" />
+      <set-property property="url" value="jdbc:mysql://localhost/firststruts" />
+      <set-property property="readOnly" value="false" />
+      <set-property property="autoCommit" value="true" />
+    </data-source>
+  </data-sources>
+
+  <form-beans >
+    <form-bean name="userForm" type="com.yourcompany.struts.form.UserForm" />
+    <form-bean name="purchaseForm" type="com.yourcompany.struts.form.PurchaseForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="userForm"
+      input="/login.jsp"
+      name="userForm"
+      path="/user"
+      scope="request"
+      type="com.yourcompany.struts.action.loginAction"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+      
+      <forward name="LoginFail" path="/LoginFail.jsp" />
+      <forward name="LoginFail2" path="/LoginFail2.jsp" />
+    </action>
+    <action
+      attribute="purchaseForm"
+      input="/purchase.jsp"
+      name="purchaseForm"
+      path="/purchase"
+      scope="request"
+      type="com.yourcompany.struts.action.PurchaseAction"
+      validate="false">
+      <forward name="purchaseSuc" path="/purchaseSuc.jsp" />
+      <forward name="purchaseFail" path="/purchase.jsp" />
+    </action>
+    
+
+  </action-mappings>
+
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+

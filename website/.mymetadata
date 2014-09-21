@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="SecBroadcast"
+  id="myeclipse.1278453575863"
+  context-root="/SecBroadcast"
+  j2ee-spec="5.0"
+  archive="SecBroadcast.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

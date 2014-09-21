@@ -1,0 +1,142 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  Internal Error (0xe06d7363), pid=8904, tid=2280
+#
+# Java VM: Java HotSpot(TM) Client VM (11.3-b02 mixed mode windows-x86)
+# Problematic frame:
+# C  [KERNELBASE.dll+0xc41f]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x002bb000):  JavaThread "main" [_thread_in_native, id=2280, stack(0x00300000,0x00350000)]
+
+siginfo: ExceptionCode=0xe06d7363, ExceptionInformation=0x19930520 0x0034fb1c 0x6ecc10fc 
+
+Registers:
+EAX=0x0034f9b8, EBX=0x00000000, ECX=0x00000003, EDX=0x00000000
+ESP=0x0034f9b8, EBP=0x0034fa08, ESI=0x00000010, EDI=0x0000000f
+EIP=0x7610c41f, EFLAGS=0x00000216
+
+Top of Stack: (sp=0x0034f9b8)
+0x0034f9b8:   e06d7363 00000001 00000000 7610c41f
+0x0034f9c8:   00000003 19930520 0034fb1c 6ecc10fc
+0x0034f9d8:   00d6f1c7 fffffffe 775c389a 775c3492
+0x0034f9e8:   00000000 00000003 00000000 00000018
+0x0034f9f8:   00000000 0034fa1c 6eca6acb 0cc80000
+0x0034fa08:   0034fa40 6eca6c09 e06d7363 00000001
+0x0034fa18:   00000003 0034fa34 e06d7363 00000001
+0x0034fa28:   00000000 00000000 00000003 19930520 
+
+Instructions: (pc=0x7610c41f)
+0x7610c40f:   0c eb 03 89 45 c0 8d 45 b0 50 ff 15 5c 11 10 76
+0x7610c41f:   c9 c2 10 00 cc cc cc cc cc 8b ff 55 8b ec 56 8b 
+
+
+Stack: [0x00300000,0x00350000],  sp=0x0034f9b8,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [KERNELBASE.dll+0xc41f]
+C  [KEY_GEN.dll+0x26c09]
+C  [KEY_GEN.dll+0x4b34]
+j  test.testjni.getkey(ILjava/lang/String;I)Ljava/lang/String;+0
+j  test.testjni.main([Ljava/lang/String;)V+86
+v  ~StubRoutines::call_stub
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  test.testjni.getkey(ILjava/lang/String;I)Ljava/lang/String;+0
+j  test.testjni.main([Ljava/lang/String;)V+86
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x025ff800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=7412, stack(0x0cb60000,0x0cbb0000)]
+  0x025ce800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=8696, stack(0x0c8d0000,0x0c920000)]
+  0x025cd800 JavaThread "Attach Listener" daemon [_thread_blocked, id=3024, stack(0x0c840000,0x0c890000)]
+  0x025ccc00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7060, stack(0x0c7b0000,0x0c800000)]
+  0x025b7c00 JavaThread "Finalizer" daemon [_thread_blocked, id=8704, stack(0x0c720000,0x0c770000)]
+  0x025b6400 JavaThread "Reference Handler" daemon [_thread_blocked, id=8980, stack(0x0c690000,0x0c6e0000)]
+=>0x002bb000 JavaThread "main" [_thread_in_native, id=2280, stack(0x00300000,0x00350000)]
+
+Other Threads:
+  0x025b3000 VMThread [stack: 0x0c600000,0x0c650000] [id=5260]
+  0x0c92c400 WatcherThread [stack: 0x0cbf0000,0x0cc40000] [id=6696]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 300K [0x04600000, 0x04700000, 0x04ae0000)
+  eden space 896K,  33% used [0x04600000, 0x0464b090, 0x046e0000)
+  from space 64K,   0% used [0x046e0000, 0x046e0000, 0x046f0000)
+  to   space 64K,   0% used [0x046f0000, 0x046f0000, 0x04700000)
+ tenured generation   total 4096K, used 0K [0x04ae0000, 0x04ee0000, 0x08600000)
+   the space 4096K,   0% used [0x04ae0000, 0x04ae0000, 0x04ae0200, 0x04ee0000)
+ compacting perm gen  total 12288K, used 2080K [0x08600000, 0x09200000, 0x0c600000)
+   the space 12288K,  16% used [0x08600000, 0x088081a8, 0x08808200, 0x09200000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Users\xiedi\AppData\Local\Genuitec\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\bin\javaw.exe
+0x77590000 - 0x77710000 	C:\windows\SysWOW64\ntdll.dll
+0x76150000 - 0x76260000 	C:\windows\syswow64\kernel32.dll
+0x76100000 - 0x76147000 	C:\windows\syswow64\KERNELBASE.dll
+0x75a10000 - 0x75ab0000 	C:\windows\syswow64\ADVAPI32.dll
+0x767a0000 - 0x7684c000 	C:\windows\syswow64\msvcrt.dll
+0x76670000 - 0x76689000 	C:\windows\SysWOW64\sechost.dll
+0x75f90000 - 0x76080000 	C:\windows\syswow64\RPCRT4.dll
+0x747e0000 - 0x74840000 	C:\windows\syswow64\SspiCli.dll
+0x747d0000 - 0x747dc000 	C:\windows\syswow64\CRYPTBASE.dll
+0x76690000 - 0x76790000 	C:\windows\syswow64\USER32.dll
+0x764e0000 - 0x76570000 	C:\windows\syswow64\GDI32.dll
+0x77560000 - 0x7756a000 	C:\windows\syswow64\LPK.dll
+0x75d50000 - 0x75ded000 	C:\windows\syswow64\USP10.dll
+0x76080000 - 0x760e0000 	C:\windows\system32\IMM32.DLL
+0x76930000 - 0x769fc000 	C:\windows\syswow64\MSCTF.dll
+0x725d0000 - 0x72603000 	C:\windows\SysWOW64\nvinit.dll
+0x7c340000 - 0x7c396000 	C:\Users\xiedi\AppData\Local\Genuitec\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\msvcr71.dll
+0x6d8b0000 - 0x6db06000 	C:\Users\xiedi\AppData\Local\Genuitec\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\client\jvm.dll
+0x76600000 - 0x76632000 	C:\windows\syswow64\WINMM.dll
+0x72190000 - 0x721dc000 	C:\windows\system32\apphelp.dll
+0x6d340000 - 0x6d348000 	C:\Users\xiedi\AppData\Local\Genuitec\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\hpi.dll
+0x76a00000 - 0x76a05000 	C:\windows\syswow64\PSAPI.DLL
+0x6d860000 - 0x6d86c000 	C:\Users\xiedi\AppData\Local\Genuitec\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	C:\Users\xiedi\AppData\Local\Genuitec\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\java.dll
+0x6d8a0000 - 0x6d8af000 	C:\Users\xiedi\AppData\Local\Genuitec\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\zip.dll
+0x6ec80000 - 0x6eccb000 	C:\Users\xiedi\AppData\Local\Genuitec\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\bin\KEY_GEN.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK -Xbootclasspath/a:C:\Users\xiedi\AppData\Local\Genuitec\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.5.0.me201003231033\data\libraryset\EE_5\javaee.jar;C:\Users\xiedi\AppData\Local\Genuitec\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.5.0.me201003231033\data\libraryset\EE_5\jsf-impl.jar;C:\Users\xiedi\AppData\Local\Genuitec\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.5.0.me201003231033\data\libraryset\EE_5\jsf-api.jar;C:\Users\xiedi\AppData\Local\Genuitec\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.5.0.me201003231033\data\libraryset\EE_5\jstl-1.2.jar 
+java_command: test.testjni
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_17
+CLASSPATH=.;C:\Program Files (x86)\QuickTime\QTSystem\QTJava.zip;C:\Program Files\Java\jdk1.7.0_17\lib\dt.jar;C:\Program Files\Java\jdk1.7.0_17\lib\tools.jar;D:\Program Files\apache-tomcat-6.0.33\lib\servlet-api.jar;
+PATH=C:/Users/xiedi/AppData/Local/Genuitec/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;C:/Users/xiedi/AppData/Local/Genuitec/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;C:\Program Files\Broadcom\WHL\;C:\Program Files\Broadcom\WHL\syswow64;C:\Program Files\Broadcom\WHL\SysWow64\;C:\Program Files\Broadcom\WHL\SysWow64\syswow64;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Java\jdk1.7.0_17\bin
+USERNAME=xiedi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7601 Service Pack 1
+
+CPU:total 8 (8 cores per cpu, 2 threads per core) family 6 model 10 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht
+
+Memory: 4k page, physical 4136816k(1481148k free), swap 4194303k(4194303k free)
+
+vm_info: Java HotSpot(TM) Client VM (11.3-b02) for windows-x86 JRE (1.6.0_13-b03), built on Mar  9 2009 01:15:24 by "java_re" with MS VC++ 7.1
+
+time: Wed Mar 27 18:54:31 2013
+elapsed time: 0 seconds
+

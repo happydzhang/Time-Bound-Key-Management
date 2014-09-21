@@ -1,0 +1,193 @@
+<style type="text/css">   
+
+a:visited {
+	color: #CC9933;
+}
+
+a:active {
+	color: #FFCC00;
+}
+
+a:link {
+	color: #425A9C;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #3366CC
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #3366CC
+}
+
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #3366CC
+}
+
+h4 {
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #63F
+}
+
+ol {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	list-style-type: none;
+	margin-right: 5px;
+	color: #000000
+}
+
+ol.nav {
+	list-style: none;
+	padding: 0em .2em 0em 0em;
+	margin: 0em;
+}
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+#pagewrap {
+	padding: 5px;
+	width: 960px;
+	margin: 15px auto;
+}
+
+#header {
+	height: 120px;
+}
+
+#content {
+	width: 770px;
+	height: 880px;
+	float: right;
+}
+	.lay1{ width:770px; height:40px; border:1px solid #FF6699;}   
+	.lay2{ width:770px; height:840px; border:1px solid #FF6699;}
+
+#sidebar {
+	width: 180px;
+	height: 880px;
+	float: left;
+}
+
+#footer {
+	clear: both;
+}
+
+#logo {
+	float: left;
+	width: 830px;
+	height: 130px
+}
+
+.list {
+	float: left;
+	font-size: 1.20em;
+	line-height: 1.0;
+	text-align: left;
+	margin: .5em 0em .5em 1em;
+	width: 90%;
+	text-transform: capitalize;
+	letter-spacing: 0.05em;
+}
+
+.list:hover {
+	background: #EDECFF;
+}
+
+.iconname {
+	font-size: .9em;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+
+img {
+	max-width: 95%;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+@media screen and (max-width: 960px) {
+	#pagewrap {
+		width: 94%;
+		height: 94%;
+	}
+	#content {
+		width: 83%;
+		height: 880px;
+	}
+	#sidebar {
+		width: 15%;
+		height: 83;
+	}
+}
+
+@media screen and (max-width: 680px) {
+	#content {
+		width: 83%;
+		height: 880px;
+	}
+	#sidebar {
+		width: auto;
+		height: auto;
+		float: none;
+	}
+	.list {
+		float: left;
+		width: 20%;
+	}
+	.caption {
+		font-size: .7em;
+	}
+	.mypicture {
+		width: 50%;
+	}
+	.ab1 {
+		margin-right: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#header {
+		width: 100%;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	.list {
+		margin: 0em 0em 0em 0em;
+		width: 100%;
+		text-align: center;
+	}
+	#content {
+		height: 500px;
+		width: 500px;
+	}
+	#sidebar {
+		float: none;
+	}
+}
+
+#header,#content,#sidebar {
+	margin-bottom: 5px;
+}
+
+#pagewrap,#header,#content,#sidebar,#footer {
+	border: solid 1px #ccc;
+}
+</style>

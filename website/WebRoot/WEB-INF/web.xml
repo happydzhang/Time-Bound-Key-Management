@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>
+			This is the display name of my J2EE component
+		</display-name>
+		<servlet-name>showNew</servlet-name>
+		<servlet-class>
+			com.yourcompany.struts.action.showNew
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>
+			This is the display name of my J2EE component
+		</display-name>
+		<servlet-name>newContent</servlet-name>
+		<servlet-class>
+			com.yourcompany.struts.action.newContent
+		</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>
+			This is the display name of my J2EE component
+		</display-name>
+		<servlet-name>registeredAction</servlet-name>
+		<servlet-class>
+			com.yourcompany.struts.action.registeredAction
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+			This is the description of AES Encryption server
+		</description>
+		<display-name>
+			This is the display name of AES Encryption server
+		</display-name>
+		<servlet-name>AESEnc</servlet-name>
+		<servlet-class>servlet.AESEnc</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>
+			This is the description of UserInfo server
+		</description>
+		<display-name>
+			This is the display name of UserInfo server
+		</display-name>
+		<servlet-name>UserInfo</servlet-name>
+		<servlet-class>servlet.UserInfo</servlet-class>
+	</servlet>
+
+
+
+	<!-- 生成验证码 -->
+	<servlet>
+		<servlet-name>authImg</servlet-name>
+		<servlet-class>servlet.AuthImg</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>authImg</servlet-name>
+		<url-pattern>/authImg</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>showNew</servlet-name>
+		<url-pattern>/servlet/showNew</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>newContent</servlet-name>
+		<url-pattern>/servlet/newContent</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>registeredAction</servlet-name>
+		<url-pattern>/servlet/registeredAction</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>AESEnc</servlet-name>
+		<url-pattern>/servlet/AESEnc</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UserInfo</servlet-name>
+		<url-pattern>/servlet/UserInfo</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
+

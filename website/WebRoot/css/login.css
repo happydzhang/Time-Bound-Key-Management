@@ -1,0 +1,16 @@
+
+
+#namediv {
+         margin-top: 60px;
+         font-size: 20px;
+         font-family: Arial, Helvetica, sans-serif;
+         border: #123 solid;
+         border-width: 3px;
+         background-color: #00000;
+         width:450px;
+         padding-top:30px;
+         padding-left:25px;
+         padding-bottom:30px;
+  		  border-radius:15px;   
+       
+  	   }
